@@ -1,21 +1,22 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import eslintPluginTs from '@typescript-eslint/eslint-plugin'
+import parserTs from '@typescript-eslint/parser'
 
 export default [
   {
-    files: ["**/*.{js,mjs,cjs,ts}"],
-  },
-  {
+    files: ['**/*.ts'],
     languageOptions: {
-      globals: {
-        ...globals.browser,
-        // ...globals.node,
-      },
+      parser: parserTs,
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'module'
+      }
     },
-  },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  eslintPluginPrettierRecommended,
-];
+    plugins: {
+      '@typescript-eslint': eslintPluginTs
+    },
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'warn',
+      '@typescript-eslint/explicit-module-boundary-types': 'off'
+    }
+  }
+]
