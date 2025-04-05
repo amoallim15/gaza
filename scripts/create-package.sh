@@ -22,6 +22,7 @@ echo "📦 Creating $FULL_NAME..."
 mkdir -p "$PKG_DIR/src"
 
 
+# "build": "tsup src/index.ts --dts --format esm,cjs --out-dir dist",
 cat > "$PKG_DIR/package.json" <<EOL
 {
   "name": "$FULL_NAME",
@@ -30,7 +31,7 @@ cat > "$PKG_DIR/package.json" <<EOL
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --dts --format esm,cjs --out-dir dist",
+    "build": "tsc --emitDeclarationOnly --project tsconfig.json && tsup src/index.ts --format esm,cjs --out-dir dist",
     "dev": "tsup src/index.ts --watch",
     "test": "vitest",
     "lint": "eslint src --ext .ts",
@@ -43,6 +44,7 @@ cat > "$PKG_DIR/tsconfig.json" <<EOL
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "rootDir": "src",
     "outDir": "dist"
   },
   "include": ["src"]

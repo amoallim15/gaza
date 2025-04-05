@@ -12,7 +12,13 @@
       "strict": true,
       "skipLibCheck": true,
       "composite": true,
-      "baseUrl": "."
+      "baseUrl": ".",
+      "paths": {
+        // "@gaza/runtime": ["packages/runtime/dist"],
+        // "@gaza/render-web": ["packages/render-web/dist"],
+        // "@gaza/app": ["packages/app/dist"],
+        // "@gaza/ir": ["packages/ir/dist"]
+      },
     },
     "exclude": ["node_modules", "dist"]
   }

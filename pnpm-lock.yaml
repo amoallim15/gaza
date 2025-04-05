@@ -33,7 +33,17 @@ importers:
         specifier: ^3.0.9
         version: 3.0.9
 
+  packages/app:
+    dependencies:
+      '@gaza/runtime':
+        specifier: ^0.1.0
+        version: link:../runtime
+
   packages/gaza-core: {}
+
+  packages/ir: {}
+
+  packages/render-web: {}
 
   packages/runtime: {}
 

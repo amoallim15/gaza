@@ -1,5 +1,5 @@
 {
-  "name": "@gaza/runtime",
+  "name": "@gaza/render-web",
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -10,5 +10,8 @@
     "test": "vitest",
     "lint": "eslint src --ext .ts",
     "format": "prettier --write \"src/**/*.{ts,json,md}\""
+  },
+  "dependencies": {
+    "@gaza/runtime": "^0.1.0"
   }
 }
