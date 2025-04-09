@@ -1,8 +1,7 @@
-interface BaseRendererInfo {
+export interface RendererInfo {
   name: string
   version: string
-  key: string
-}
+  identifier: string
 
-export type RendererInfo<T extends Record<string, string> = {}> =
-  BaseRendererInfo & T
+  [key: string]: unknown
+}

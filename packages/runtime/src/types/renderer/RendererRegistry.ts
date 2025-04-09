@@ -6,4 +6,5 @@ export interface RendererRegistry {
   use(name: string): void
   current(): Renderer
   has(name: string): boolean
+  clear(): void
 }

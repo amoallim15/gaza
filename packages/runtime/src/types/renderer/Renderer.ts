@@ -1,13 +1,13 @@
-import { ComposableNode } from '../composable/ComposableNode'
-import { ComposableOptions } from '../composable/ComposableOptions'
-import { Payload } from '../Payload'
-import { ReferenceFragment } from '../fragment/ReferenceFragment'
+import { ComposableNode } from '../node'
+import { Payload } from '../payload'
+import { ReferenceFragment } from '../node'
 import { RendererInfo } from './RendererInfo'
+import { Composition } from '../composition'
 
 export interface Renderer {
   getInfo(): RendererInfo
 
-  initNode(node: unknown, options: ComposableOptions): ComposableNode
+  initNode(node: unknown, attributes: Composition): ComposableNode
   composeNode(key: string, payload: Payload): void
   listNodeKeys(): string[]
 

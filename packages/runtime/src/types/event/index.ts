@@ -1,2 +1,2 @@
 export * from './ComposeEvent'
-export * from './EventMeta'
+export * from './ComposeMetadata'
