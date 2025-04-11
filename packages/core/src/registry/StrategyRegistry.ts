@@ -1,7 +1,7 @@
 import {
   StrategyConstructor,
   StrategyRegistry as StrategyRegistryType,
-} from '../types'
+} from '../old/types'
 
 const registry = new Map<string, StrategyConstructor>()
 

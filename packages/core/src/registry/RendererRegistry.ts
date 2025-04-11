@@ -1,4 +1,7 @@
-import { Renderer, RendererRegistry as RendererRegistryType } from '../types'
+import {
+  Renderer,
+  RendererRegistry as RendererRegistryType,
+} from '../old/types'
 
 const registry = new Map<string, Renderer>()
 let current: string | null = null
